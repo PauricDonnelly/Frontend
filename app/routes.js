@@ -5,6 +5,7 @@ const citydata = require('./citydata.js')
 
 router.get('/list-cities', async (req, res) => { 
     res.render('list-cities', { cities: await citydata.getCities() } ) 
+    console.log("hello");
 });
 
 router.get('/list-cities-containing/:substr', function (req, res) {
@@ -38,16 +39,29 @@ router.post('/addcity', async (req, res) => {
 router.post('/juggling-balls-answer', function (req, res) {
 
     // Make a variable and give it the value from 'how-many-balls'
-    var howManyBalls = req.session.data['how-many-balls']
+    var querySelect = req.session.data['querySelect']
 
     // Check whether the variable matches a condition
-    if (howManyBalls == "3 or more") {
+    if (querySelect == "Query 1") {
         // Send user to next page
-        res.redirect('/juggling-trick')
-    } else {
-        // Send user to ineligible page
-        res.redirect('/ineligible')
+        res.redirect('juggling-balls') // link to query 1 result
+    } if (querySelect == "Query 2") {
+        // Send user to next page
+        res.redirect('juggling-balls') // link to query 1 result
     }
+    if (querySelect == "Query 3") {
+        // Send user to next page
+        res.redirect('juggling-balls') // link to query 1 result
+    }
+    if (querySelect == "Query 4") {
+        // Send user to next page
+        res.redirect('juggling-balls') // link to query 1 result
+    }
+    if (querySelect == "Query 5") {
+        // Send user to next page
+        res.redirect('juggling-balls') // link to query 1 result
+    }
+    
 
 })
 
