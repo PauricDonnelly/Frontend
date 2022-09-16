@@ -6,13 +6,15 @@ List of Cities
 {% block content %}
 
 <h2>List of Cities</h2>
+
 {% if cities and cities.length > 0 %}
 {% set cityrows = [] %}
 {% for city in cities%}
-{% set cityrows = (cityrows.push({text: city.data}), cityrows) %}
+{% set cityrows = (cityrows.push([{text: city.firstName}, {text: city.lastName}, {text: city.salary}, {text: city.bankAccountNumber}, {text: city.niNumber}, {text: city.phoneNumber}, {text: city.email}]), cityrows) %}
 {% endfor %}
 {{govukTable({
-head: [{ text: "Name" }]})
+head: [{ text: "First Name" },{ text: "Last Name" },{ text: "Salary" },{ text: "Bank Acc No" },{ text: "niNumber" },{ text: "phoneNumber" },{ text: "email" }],
+rows: cityrows})
 }}
 {% else %}
 There are no cities.

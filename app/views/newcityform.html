@@ -21,32 +21,33 @@
     <div class="govuk-error-message">{{ errormessage }}</div>
     {% endif %}
 
-    <div class="header">
-        <h1>Header</h1>
-        <p>My supercool header</p>
-      </div>
-
     {% block content %}
-    <h1 class="govuk-heading-xl">Add new city</h1>
+    <h1 class="govuk-heading-xl">Add new Employee</h1>
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
             <form class="form" action="/addcity" method="post">
 
-                <label for="id">ID:</label><br>
-                <input type="text" id="id" name="id" value="{{id}}"/><br>
+                <label for="firstName">First Name:</label><br>
+                <input type="text" id="firstName" name="firstName" value="{{firstName}}"/><br>
 
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name" value="{{name}}"/><br>
+                <label for="lastName">last Name:</label><br>
+                <input type="text" id="lastName" name="lastName" value="{{lastName}}"/><br>
 
-                <label for="country">Country:</label><br>
-                <input type="text" id="countrycode" name="countrycode" value="{{countrycode}}"/><br>
+                <label for="salary">Salary:</label><br>
+                <input type="text" id="salary" name="salary" value="{{salary}}"/><br>
 
-                <label for="district">District:</label><br>
-                <input type="text" id="district" name="district" value="{{district}}"/><br>
+                <label for="bankAccountNumber">Bank Account Number:</label><br>
+                <input type="text" id="bankAccountNumber" name="bankAccountNumber" value="{{bankAccountNumber}}"/><br>
 
-                <label for="population">Population:</label><br>
-                <input type="text" id="population" name="population" value="{{population}}"/><br>
+                <label for="niNumber">National Insurance Number:</label><br>
+                <input type="text" id="niNumber" name="niNumber" value="{{niNumber}}"/><br>
+
+                <label for="phoneNumber">Phone Number:</label><br>
+                <input type="text" id="phoneNumber" name="phoneNumber" value="{{phoneNumber}}"/><br>
+
+                <label for="email">Email:</label><br>
+                <input type="text" id="email" name="email" value="{{email}}"/><br>
 
 
                 <button class="govuk-button" data-module="govuk-button">Continue</button>
