@@ -30,17 +30,16 @@ exports.getCitiesInCountry = async (countrycode) => {
 
 
 exports.addCity = async (newCity) => {
-   let results = await axios.post('http://localhost:8080/api/cities', newCity)
-   return results.insertId;
+  axios.post('http://localhost:8080/api/addEmployee', newCity)
 }
 
 exports.getCities = async () => { 
    let cities = []  
+   console.log(cities)
      try {  
-       const cityResponse = await axios.get('http://localhost:8080/api/cities')
-       for (let name of cityResponse.data) {
-         cities.push(name)
-       }
+       const cityResponse = await axios.get('http://localhost:8080/api/reportEmployeeDetails')
+       cities = cityResponse.data 
+       console.log(cities)
      } catch (e) {
         return new Error('Could not get cities')
      }
